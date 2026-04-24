@@ -332,7 +332,7 @@ watch([receitas, receitaAtivaId], salvarNoNavegador, { deep: true })
 <template>
   <main class="pagina">
     <section class="hero">
-      <p class="selo">Padaria</p>
+      <p class="selo">Cravo e canela</p>
       <h1>Calculadora de Custo de Receita</h1>
       <p>
         Monte a receita, informe preco e quantidade de cada ingrediente, e veja o
