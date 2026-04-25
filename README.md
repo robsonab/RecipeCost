@@ -4,16 +4,21 @@ Aplicacao web em Vue 3 para calcular o custo proporcional de ingredientes em uma
 
 ## MVP atual
 
-- Cadastro rapido de ingredientes com:
+- Cadastro centralizado de ingredientes com:
 	- nome
 	- preco pago
 	- quantidade comprada e unidade
-	- quantidade usada na receita e unidade
+- Reuso de ingredientes em multiplas receitas
+- Atualizacao global de ingrediente:
+	- ao editar preco/quantidade comprada em uma receita, o ingrediente e atualizado no catalogo central
+	- essa alteracao reflete automaticamente em todas as receitas que usam o ingrediente
 - Calculo proporcional por ingrediente:
-	- formula: `(preco base / quantidade base) * quantidade da receita`
+	- formula: `(preco base / quantidade base convertida) * quantidade da receita`
+	- conversao automatica entre `kg <-> g` e `l <-> ml`
 - Custo total da receita (somatorio dos ingredientes)
 - Suporte a multiplas receitas no navegador (selecionar, criar e excluir)
 - Persistencia local no navegador com `localStorage`
+- Migracao automatica do formato antigo para o novo formato de dados
 - Interface em portugues e responsiva para desktop e mobile
 
 ## Tecnologias
@@ -55,6 +60,6 @@ Recomendado usar Node.js `20.19+` (ou `22.12+`) para evitar warnings do Vite mai
 
 ## Proximos passos sugeridos
 
-- Cadastro de ingredientes base reutilizaveis
-- Lista de receitas salvas
 - Custo por porcao/fatia
+- Exportacao da ficha de custo (PDF ou impressao)
+- Historico de reajuste de preco dos ingredientes

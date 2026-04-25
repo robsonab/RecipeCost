@@ -83,6 +83,32 @@ h2 {
   max-width: 680px;
 }
 
+.abas {
+  display: inline-flex;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 16px;
+  border: 1px solid var(--borda);
+  background: #fff4e7;
+  width: fit-content;
+}
+
+.aba-btn {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-weight: 700;
+  background: transparent;
+  color: var(--texto-suave);
+  cursor: pointer;
+}
+
+.aba-btn.ativo {
+  background: var(--primaria);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(194, 91, 48, 0.25);
+}
+
 .card {
   background: var(--fundo-cards);
   border: 1px solid var(--borda);
@@ -193,10 +219,23 @@ select:focus {
   border: 1px solid #e2c5ab;
 }
 
+.btn-perigo {
+  background: #b1261a;
+  color: #fff;
+}
+
+.btn-perigo:hover {
+  background: #8f1d14;
+}
+
 .erro {
   margin: 12px 0 0;
   color: var(--perigo);
   font-weight: 700;
+}
+
+.erro-global {
+  margin: -6px 0 0;
 }
 
 .cabecalho-tabela {
@@ -309,6 +348,43 @@ th {
   color: #5c2f1b;
 }
 
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(22, 14, 8, 0.45);
+  backdrop-filter: blur(2px);
+  display: grid;
+  place-items: center;
+  z-index: 1200;
+  padding: 20px;
+}
+
+.modal-confirmacao {
+  width: min(520px, 100%);
+  background: var(--fundo-cards);
+  border: 1px solid var(--borda);
+  border-radius: 18px;
+  box-shadow: var(--sombra);
+  padding: 20px;
+}
+
+.modal-confirmacao h3 {
+  margin: 0 0 8px;
+  font-family: 'Fraunces', Georgia, serif;
+}
+
+.modal-confirmacao p {
+  margin: 0;
+  color: var(--texto-suave);
+}
+
+.modal-acoes {
+  margin-top: 16px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
 @keyframes surgir {
   from {
     opacity: 0;
@@ -364,6 +440,12 @@ th {
     align-items: flex-start;
   }
 
+  .abas {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
   .receitas-controle {
     flex-direction: column;
     align-items: stretch;
@@ -377,5 +459,10 @@ th {
     flex-direction: column;
     align-items: flex-start;
     gap: 4px;
+  }
+
+  .modal-acoes {
+    flex-direction: column-reverse;
+    align-items: stretch;
   }
 }
